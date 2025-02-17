@@ -1,3 +1,4 @@
+HEAD
 # Waterfall Model
 
 [[Software Engineering]]
@@ -44,3 +45,7 @@ Through a menu-driven interface, users may manage product information with this 
 In order to facilitate communication between the Python code and the MySQL database, the program starts by importing *mysql*.*connector*. Using parameters like *host, user, password, and database*, a connection to the database is made, and a cursor object is made in order to run SQL queries.
 
 The application presents a menu with five choices after connecting: adding, search, edit, view products and delete. Because each option is managed by a distinct block of code, the user can carry out the intended action.  
+
+# waterfall_model
+Homework assignment for my software engineering class
+
