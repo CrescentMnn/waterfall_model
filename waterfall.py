@@ -12,10 +12,7 @@ import mysql.connector
 
 # Set up your connection parameters
 db_connection = mysql.connector.connect(
-    host="localhost",            # Your host, typically localhost
-    user="moon",        # Your MySQL username (e.g., root)
-    password="123123",    # Your MySQL password
-    database="waterfall_model"     # The name of the database you want to use
+    #parameters
 )
 
 # Create a cursor object to interact with the database
