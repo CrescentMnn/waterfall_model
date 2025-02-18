@@ -28,6 +28,8 @@ while(1):
     print("\tMENU\n\n1. Add product\n2. Search\n3. Edit\n4. View products\n5. Delete\n6. Exit\n\n");
     menu_input = input("input:");
 
+# ADDING
+
     if menu_input == '1':
         product_name = input("Product Name: ")
         product_code = input("Product Code: ")
