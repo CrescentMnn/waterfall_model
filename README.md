@@ -34,7 +34,8 @@ The database model for this inventory system consists of a single table named `P
 
 This table serves as the central data storage, with each field corresponding to product attributes that can be manipulated through the program’s functionalities like search, edit, view, and delete.
 
-![[Drawing 2025-02-17 16.56.39.excalidraw.png]]
+![image](https://github.com/user-attachments/assets/a83ca17c-f097-4cbd-8ef3-9bcc5bf093b6)
+
 	Fig 1. ER diagram regarding the database used
 
  ### Explanation
