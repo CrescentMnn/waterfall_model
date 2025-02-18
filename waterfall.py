@@ -10,8 +10,6 @@
 
 import mysql.connector
 
-print("MySQL connector installed successfully! UwU")
-
 # Set up your connection parameters
 db_connection = mysql.connector.connect(
     host="localhost",            # Your host, typically localhost
@@ -27,11 +25,27 @@ cursor = db_connection.cursor()
 print("\t\t++++++++++++WATERFALL MODEL++++++++++++\n\n\n")
 
 while(1):
-    print("\tMENU\n\n1. Search\n2. Edit\n3. View products\n4. Delete\n5. Exit\n\n");
+    print("\tMENU\n\n1. Add product\n2. Search\n3. Edit\n4. View products\n5. Delete\n6. Exit\n\n");
     menu_input = input("input:");
 
-# SEARCH
     if menu_input == '1':
+        product_name = input("Product Name: ")
+        product_code = input("Product Code: ")
+        category = input("Category: ")
+        quantity = input("Quantity: ")
+        purchase_price = input("Purchase Price: ")
+        sale_price = input("Sale Price: ")
+        supplier = input("Supplier: ")
+
+        query = """INSERT INTO products (name, product_code, category, quantity, purchase_price, sale_price, supplier) VALUES (%s, %s, %s, %s, %s, %s, %s)"""
+        cursor.execute(query, (product_name, product_code, category, quantity, purchase_price, sale_price, supplier))
+        db_connection.commit()
+
+        print("New product added successfully!\n\n\n")
+
+        
+# SEARCH
+    if menu_input == '2':
         search_fields = {
         '1': 'name',
         '2': 'product_code',
@@ -53,7 +67,7 @@ while(1):
  
 # EDIT 
 
-    elif menu_input == '2':
+    elif menu_input == '3':
         edit_fields = {
             '1': 'name',
             '2': 'product_code',
@@ -79,7 +93,7 @@ while(1):
 
 # SHOW
 
-    elif menu_input == '3':
+    elif menu_input == '4':
         try:
             cursor.execute("SELECT * FROM products")
             products = cursor.fetchall()
@@ -96,7 +110,7 @@ while(1):
 
 # DELETE
 
-    elif menu_input == '4':
+    elif menu_input == '5':
         user_input_code = input("Enter the product code to delete: ")
         cursor.execute("DELETE FROM products WHERE product_code = %s", (user_input_code,))
 
@@ -106,7 +120,7 @@ while(1):
 
 # EXIT
 
-    elif menu_input == '5':
+    elif menu_input == '6':
         print("Exiting...\n");
         break;
 
