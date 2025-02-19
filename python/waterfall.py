@@ -8,13 +8,27 @@
 
 # SEARCH: allow search by: name, code, category or supplier
 
+# used for delay for connection with database
+import time
+
 import mysql.connector
 
-# Set up your connection parameters
-db_connection = mysql.connector.connect(
-    #parameters
-    user='moon', password='123123', host='db', port="3306", database='waterfall_model_database'
-)
+# Adds delay for succesfull connection with database
+while True:
+    try:
+        db_connection = mysql.connector.connect(
+            user='moon',
+            password='123123',
+            host='db',
+            port="3306",
+            database='waterfall_model_database'
+        )
+        print("Database connected!")
+        break
+    except mysql.connector.Error as err:
+        print(f"Database connection failed: {err}")
+        print("Retrying in 5 seconds...")
+        time.sleep(5)
 
 # Create a cursor object to interact with the database
 cursor = db_connection.cursor()
