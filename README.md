@@ -35,12 +35,12 @@ The database model for this inventory system consists of a single table named `P
 
 This table serves as the central data storage, with each field corresponding to product attributes that can be manipulated through the program’s functionalities like search, edit, view, and delete.
 
-![[Drawing 2025-02-17 16.56.39.excalidraw.png]]
+![image](https://github.com/user-attachments/assets/b04e2901-4fdf-42b3-bbdf-1021404fd763)
 	Fig 1. ER diagram regarding the database used
 
 ## Calendar
 
-![[bcon-waterfall-904136447.jpg]]
+![bcon-waterfall-904136447](https://github.com/user-attachments/assets/bc0363f5-1395-470d-b498-385172d1a036)
 	Fig 2. Waterfall Model
 
 ### Project Timeline Explanation
@@ -79,7 +79,7 @@ The application presents a menu with five choices after connecting: adding, sear
 **Adding new product**
 
 Users can add a product by introducing all of the neccessary arguuments (*name, product code, category, quantity, purchase price, sale price, supplier.*)
-![[Pasted image 20250217192457.png]]
+![Screenshot 2025-02-17 192443](https://github.com/user-attachments/assets/049ad9c5-0f47-4614-a36b-a3eb13a2c04d)
 	Fig 3. ADD function
 
 **Search**
@@ -90,19 +90,19 @@ Users can look up products using the search functionality by:
 
 Based on the chosen criterion, the application creates a SQL query to retrieve and show related products from the database.
 
-![[Pasted image 20250217192549.png]]
+![Screenshot 2025-02-17 192546](https://github.com/user-attachments/assets/a140907e-d120-4249-a3c0-86712fdd6be7)
 	Fig 4. SEARCH function
 
 **Edit function**
 Users can change the product's name, code, category, quantity, buy price, sale price, and supplier using the edit function. The application changes the relevant database record after asking the user for the product code and the updated value.  
 
-![[Pasted image 20250217192603.png]]
+![Screenshot 2025-02-17 192601](https://github.com/user-attachments/assets/6843a695-7626-4de5-86f4-0ffbd9eb9f5a)
 	Fig 5. EDIT function
 
 **View Products**
 All of the products kept in the database are retrieved and shown using the view option. The ID, name, code, category, quantity, buy price, sale price, and supplier of every product are printed in an easily legible format.  
 
-![[Pasted image 20250217192625.png]]
+![Screenshot 2025-02-17 192624](https://github.com/user-attachments/assets/e16cb59f-583c-4985-8053-22610ced0332)
 	Fig 6. SHOW function
 
 **Delete function**
@@ -110,13 +110,14 @@ By entering a product's code, consumers can utilize the delete function to get r
 
 Lastly, the application provides an exit option to end the session, making sure that the database connection and cursor are correctly terminated before doing so. This application offers a straightforward yet efficient inventory management solution and shows how to use Python to manage database activities.
 
-![[Pasted image 20250217192642.png]]
+![Screenshot 2025-02-17 192636](https://github.com/user-attachments/assets/3d1b6dfa-e089-4bbb-8554-f07f98696ce9)
 	Fig 7. DELETE and EXIT functions, as well as closing the cursor and connection to the database
 
 It should also be noted that for connecting the python program to a database we used the libraries MySQL. Connector and time, both of these ensure a connection to the database without any issues with the docker containers.
 
-![[Pasted image 20250219110133.png]]
+![Screenshot 2025-02-19 110022](https://github.com/user-attachments/assets/99f4c603-b1fe-48de-a0c4-db42a9fdb1cc)
 	Fig 8. Connection to the database and libraries
+ 
 ## Docker Implementation
 
 For this project, I chose Docker to simplify deployment and maintain a consistent environment for both the program and the database. 
@@ -140,14 +141,14 @@ If you want to use this setup, make sure Docker is installed and updated on your
 	
 	This will build the database and application images.
 	
-	![[Pasted image 20250219102808.png]]
+	![Screenshot 2025-02-19 102804](https://github.com/user-attachments/assets/93cd5355-d609-4d71-9248-a5cfcfbe8a4b)
 		Fig 9. Successful docker build
 	
 	Following the correct build you should also Start the containers with a different command:
 	``
 		`docker-compose up -d`
 	
-	![[Pasted image 20250219103059.png]]
+	![Screenshot 2025-02-19 103049](https://github.com/user-attachments/assets/4f198fcb-594d-4b07-9488-9eada16acbc5)
 		Fig 10. Successful start of containers
 		
 3. **Verify running containers**
@@ -157,7 +158,7 @@ If you want to use this setup, make sure Docker is installed and updated on your
 	
 	If the containers where successfully built you should see the following output (or similar):
 	
-	![[Pasted image 20250219104237.png]]
+	![Screenshot 2025-02-19 104235](https://github.com/user-attachments/assets/f02ea83e-b89a-4c36-b9ac-0c2fcf214348)
 		Fig 11. Successful `docker ps` command
 	
 4. **Interacting with the Database and Python Program**
@@ -171,7 +172,7 @@ If you want to use this setup, make sure Docker is installed and updated on your
 	
 		`docker exec -it db mysql -u moon -p`
 	
-	![[Pasted image 20250219105229.png]]
+	![Screenshot 2025-02-19 105216](https://github.com/user-attachments/assets/cdb7a6c6-0097-4a24-a152-213beedaee9c)
 		Fig 12. Database structure inside MySQL
 
 5. **Stopping and Restarting the Containers**
@@ -183,23 +184,25 @@ The following screenshots demonstrate how the menu works and how these operation
 
 **Viewing initial list**
 
-![[first.png]]
+![first](https://github.com/user-attachments/assets/241fc12f-f13e-4d91-82be-96ab208aeaba)
 
 **Adding new product**
 	
-![[second.png]]
+![second](https://github.com/user-attachments/assets/7fbc32b9-15b2-4ffa-8e80-d92aff7dbd58)
 
 
-![[third.png]]
+![third](https://github.com/user-attachments/assets/466d0e76-3ebd-450c-8054-8a988a8e6c5e)
+
 
 **Searching for a product**
 
-![[fourth.png]]
+![fourth](https://github.com/user-attachments/assets/60227f4d-b53c-4ab7-a788-e3f40942ed06)
+
 **Updating product info and Deleting product**
 
-![[fifth.png]]
+![fifth](https://github.com/user-attachments/assets/1e3d1f49-02f2-4124-9800-68008a8e5c47)
 
-![[sixth.png]]
+![sixth](https://github.com/user-attachments/assets/8e3675ad-b919-4e12-8c19-84ec9d689477)
 
 ## References
 
